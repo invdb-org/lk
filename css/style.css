@@ -97,10 +97,6 @@ body.theme-services {
   padding: 0;
 }
 
-html {
-  font-size: clamp(15px, 1.1vw, 16px);
-}
-
 body {
   font-family: "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
   background: var(--surface);
@@ -116,14 +112,11 @@ a {
 img {
   max-width: 100%;
   display: block;
-  height: auto;
 }
 
 .container {
-  width: 100%;
-  max-width: 1120px;
+  width: min(1120px, 92%);
   margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 32px);
 }
 
 .skip-link {
@@ -152,11 +145,9 @@ img {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 16px 0;
-  gap: 12px;
-  flex-direction: column;
-  text-align: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  gap: 16px;
 }
 
 .brand {
@@ -177,20 +168,18 @@ img {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
+  gap: 18px;
+  font-size: 15px;
   color: var(--text-muted);
   flex-wrap: wrap;
-  flex-direction: column;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
 }
 
 .lang-toggle {
@@ -199,8 +188,8 @@ img {
   gap: 8px;
   font-size: 0.85rem;
   color: var(--text-muted);
-  border-left: 0;
-  padding-left: 0;
+  border-left: 1px solid var(--border-soft);
+  padding-left: 16px;
 }
 
 .lang-button {
@@ -231,7 +220,7 @@ img {
 }
 
 .nav-links a {
-  padding: 6px 4px;
+  padding-bottom: 4px;
   border-bottom: 1px solid transparent;
 }
 
@@ -261,7 +250,7 @@ img {
 }
 
 .hero {
-  padding: clamp(36px, 8vw, 72px) 0 clamp(32px, 6vw, 60px);
+  padding: 72px 0 60px;
   background: linear-gradient(135deg, var(--hero-accent), transparent 65%);
 }
 
@@ -280,7 +269,7 @@ img {
 
 .hero p {
   color: var(--text-muted);
-  font-size: clamp(0.98rem, 1.2vw, 1.05rem);
+  font-size: 1.05rem;
   margin-bottom: 20px;
 }
 
@@ -297,8 +286,6 @@ img {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .cta-group.spaced {
@@ -309,7 +296,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 999px;
   border: 1px solid var(--green-deep);
   font-weight: 600;
@@ -339,7 +326,7 @@ img {
 }
 
 .section {
-  padding: clamp(40px, 7vw, 64px) 0;
+  padding: 64px 0;
 }
 
 .section-muted {
@@ -366,7 +353,7 @@ img {
 .feature-card {
   border: 1px solid var(--border-soft);
   border-radius: 20px;
-  padding: clamp(20px, 4vw, 28px);
+  padding: 28px;
   background: var(--surface);
   display: grid;
   gap: 16px;
@@ -395,7 +382,7 @@ img {
 .variant-card {
   border: 1px solid var(--border-soft);
   border-radius: 18px;
-  padding: clamp(18px, 3vw, 24px);
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -410,7 +397,7 @@ img {
 .pill {
   border: 1px solid var(--border-soft);
   border-radius: 18px;
-  padding: clamp(18px, 3vw, 24px);
+  padding: 24px;
   display: grid;
   gap: 12px;
   background: var(--surface);
@@ -482,7 +469,7 @@ img {
   position: relative;
   border-radius: 16px;
   background: var(--product-image-bg);
-  height: clamp(180px, 38vw, 240px);
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -520,11 +507,11 @@ img {
 }
 
 .hero-image {
-  height: clamp(200px, 42vw, 280px);
+  height: 260px;
 }
 
 .tall-image {
-  height: clamp(240px, 50vw, 360px);
+  height: 320px;
 }
 
 .product-card .button,
@@ -534,7 +521,7 @@ img {
 
 .callout {
   border-radius: 18px;
-  padding: clamp(20px, 4vw, 28px);
+  padding: 28px;
   border: 1px solid var(--border-soft);
   background: var(--surface);
   box-shadow: var(--shadow);
@@ -561,7 +548,7 @@ img {
 .contact-card {
   border: 1px solid var(--border-soft);
   border-radius: 16px;
-  padding: clamp(16px, 3vw, 20px);
+  padding: 20px;
   background: var(--surface);
   box-shadow: var(--shadow);
 }
@@ -610,41 +597,39 @@ img {
 
 footer {
   border-top: 1px solid var(--border-soft);
-  padding: clamp(24px, 4vw, 32px) 0;
+  padding: 32px 0;
   color: var(--text-muted);
   font-size: 0.9rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-    padding: 18px 0;
-    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .nav-links {
-    flex-direction: row;
-    gap: 18px;
-    font-size: 0.95rem;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .nav-actions {
-    flex-direction: row;
-    gap: 18px;
+    flex-direction: column;
   }
 
   .lang-toggle {
-    border-left: 1px solid var(--border-soft);
-    padding-left: 16px;
+    border-left: 0;
+    padding-left: 0;
   }
 
   .cta-group {
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
+}
 
+@media (min-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -653,10 +638,6 @@ footer {
   .delivery-grid,
   .contact-grid,
   .pill-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .quality-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -669,8 +650,10 @@ footer {
   .pill-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
 
-  .quality-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+@media (min-width: 1280px) {
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
